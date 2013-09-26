@@ -3,7 +3,7 @@
 \setmainfont{Linux Libertine O}
 \setmainlanguage{french}
 \usepackage{minted}
-\newcommand{\code}[3]{\onslide<#1>{\begin{block}{#2}\inputminted{latex}{code/#3.tex}\end{block}}}
+\newcommand{\code}[3]{\only<#1>{\begin{block}{#2}\inputminted{latex}{code/#3.tex}\end{block}}}
 \author{Maïeul Rouquette}
 \date{Rencontres \LaTeX\ et SHS}
 \title{Créer ses propres classes et packages}
