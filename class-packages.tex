@@ -3,7 +3,7 @@
 \setmainfont{Linux Libertine O}
 \setmainlanguage{french}
 \usepackage{minted}
-
+\newcommand{\code}[3]{\onslide<#1>{\begin{block}{#2}\inputminted{latex}{#3}\end{block}}}
 \author{Maïeul Rouquette}
 \date{Rencontres \LaTeX\ et SHS}
 \title{Créer ses propres classes et packages}
@@ -12,38 +12,50 @@
 \begin{document}
 
 
-\begin{frame}
-	\titlepage
-	\vfill
-	{\tiny Licence Creative Commons France 3.0 - Paternité - Partage à l'identique}
-\end{frame}
-
+%\begin{frame}
+%	\titlepage
+%	\vfill
+%	{\tiny Licence Creative Commons France 3.0 - Paternité - Partage à l'identique}
+%\end{frame}
+%
 
 \begin{frame}
 	\frametitle{Définitions}
 	\begin{description}
-		\item[Classe]{Ensemble de commandes et réglages \TeX/\LaTeX\ correspondant à un type éditorial}
-		\item[Package]{Ensemble de commandes \TeX correspondant à un besoin fonctionnel}
+		\item[Classe]Ensemble de commandes et réglages \TeX/\LaTeX\ correspondant à un type éditorial
+		\item[Package]Ensemble de commandes \TeX correspondant à un besoin fonctionnel
 	\end{description}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Principes}
 	\begin{itemize}
-		\item<1->Ensemble de commandes groupée dans un fichier \verb+.cls+ ou \verb+.sty+
-		\item<2->Particularité : les commandes peuvent contenir un \verb+@+ dans le nom.
+		\item<1->Ensemble de commandes groupée dans un fichier .cls ou .sty.
+		\item<2->Particularité : les commandes peuvent contenir un @ dans le nom.
 	\end{itemize}
 \end{frame}
+
 \begin{frame}
 	\frametitle{Avant toutes choses}
 	\begin{itemize}
 		\item<1->Définir les besoins
 			\begin{itemize}
-				\item<2->Quels seront les commandes internes (avec \verb+@+) et quels seront les commandes externes (utilisable par les utilisateurs).
+				\item<2->Quels seront les commandes internes (avec @) et quels seront les commandes externes (utilisable par les utilisateurs).
 				\item<3->Dans l'idéal, rédiger la documentation utilisateur d'abord !
 			\end{itemize}
 		\item<4->Avoir de la documentation sur \LaTeX\ autre qu'une simple introduction. Voir sur \TeX.
 		\item<5->Utiliser un système de gestion des versions (SVN, GIT)
 	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Commandes de bases}
+	\begin{overprint}
+		\code{1}{Indiquer le nom, la date et la version (classe)}{code/infos-classe.tex}
+		\code{1}{Indiquer le nom, la date et la version (package)}{code/infos-package.tex}
+		\code{2}{Charger une classe déjà existante}{code/charger-classe.tex}
+		\code{2}{Charger un package déjà existant}{code/charger-package.tex}			
+		\code{3}{Déclarer des options}{code/declarer-options.tex}
+	\end{overprint}
 \end{frame}
 \end{document}
