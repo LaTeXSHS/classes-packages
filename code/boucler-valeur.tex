@@ -1,0 +1,21 @@
+\newcommand{\jury}[1]{%
+	\gdef\@jury{}%%% Définir une liste interne
+	
+	% Puis la remplir
+	\renewcommand{\do}[1]{\listgadd{\@jury}{##1}}%
+	\docsvlist{#1}%
+}
+\renewcommand{\maketitle}{
+\ifcsdef{@jury}% Vérifier que la liste existe
+	{%Si oui
+	Jury:
+	\begin{itemize}
+	\forlistloop{\item}{\@jury}% Faire une boucle dessus
+	\end{itemize}
+	}
+	{Pas de jury}% Si non
+}
+
+%%% On pourra l'utiliser ainsi
+\jury{Machin,Bidule,Truc,Chose}
+\maketitle

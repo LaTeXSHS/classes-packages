@@ -3,7 +3,7 @@
 \setmainfont{Linux Libertine O}
 \setmainlanguage{french}
 \usepackage{minted}
-\newcommand{\code}[3]{\onslide<#1>{\begin{block}{#2}\inputminted{latex}{#3}\end{block}}}
+\newcommand{\code}[3]{\onslide<#1>{\begin{block}{#2}\inputminted{latex}{code/#3.tex}\end{block}}}
 \author{Maïeul Rouquette}
 \date{Rencontres \LaTeX\ et SHS}
 \title{Créer ses propres classes et packages}
@@ -51,27 +51,37 @@
 \begin{frame}
 	\frametitle{Commandes de bases}
 	\begin{overprint}
-		\code{1}{Indiquer le nom, la date et la version (classe)}{code/infos-classe.tex}
-		\code{1}{Indiquer le nom, la date et la version (package)}{code/infos-package.tex}
-		\code{2}{Charger une classe déjà existante}{code/charger-classe.tex}
-		\code{2}{Charger un package déjà existant}{code/charger-package.tex}			
-		\code{3}{Déclarer des options}{code/declarer-options.tex}
+		\code{1}{Indiquer le nom, la date et la version (classe)}{infos-classe}
+		\code{1}{Indiquer le nom, la date et la version (package)}{infos-package}
+		\code{2}{Charger une classe déjà existante}{charger-classe}
+		\code{2}{Charger un package déjà existant}{charger-package}			
+		\code{3}{Déclarer des options}{declarer-options}
 	\end{overprint}
 \end{frame}
 \begin{frame}
 	\frametitle{Quelques packages utiles}
 	\begin{itemize}
-		\item<1->Pour la gestion de la mise en page
-			\begin{itemize}<1->
-				\item\alert<1> geometry
-				\item\alert<2> fancyhdr
-				\item\alert<3> TikZ
+		\item Pour la gestion de la mise en page
+			\begin{itemize}
+				\item\alert<1>{geometry}
+				\item\alert<2>{fancyhdr}
+				\item\alert<3>{TikZ}
 			\end{itemize}
-		\item<4->Pour créer facilement des commandes
-			\begin{itemize}<4->
-				\item\alert<4>xargs
-				\item\alert<5>xkeyval
-				\item\alert<6>etoolbox
+		\item Pour créer facilement des commandes
+			\begin{itemize}
+				\item\alert<4>{xargs}
+				\item\alert<5>{xkeyval}
+				\item\alert<6>{etoolbox}
 			\end{itemize}
 	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Quelques codes utiles}
+	\begin{overprint}
+		\code{1}{Retenir une valeur fournie par l'utilisateur}{retenir-valeur}
+		\code{2}{Tester l'existence d'une commande}{tester-existence}
+		\code{3}{Boucler sur une liste de valeurs}{boucler-valeurs}
+	\end{overprint}
+\end{frame}
 \end{document}
