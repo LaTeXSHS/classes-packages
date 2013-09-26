@@ -1,5 +1,5 @@
 \documentclass{beamer}
-\usepackage{fontspec,polyglossia,xunicode}
+\usepackage{fontspec,polyglossia,xunicode,hyperref}
 \setmainfont{Linux Libertine O}
 \setmainlanguage{french}
 \usepackage{minted}
@@ -8,6 +8,13 @@
 \date{Rencontres \LaTeX\ et SHS}
 \title{Créer ses propres classes et packages}
 \institute{Université de Lausanne --- IRSB}
+
+\usepackage{biblatex-philologue/biblatex-philologue}
+\bibliography{class-packages.bib}
+\renewbibmacro*{cite}{%
+  \usebibmacro{cite:citepages}%
+    {\usebibmacro{cite:full}}}
+
 \usetheme{Darmstadt}
 \begin{document}
 
@@ -83,5 +90,17 @@
 		\code{2}{Tester l'existence d'une commande}{tester-existence}
 		\code{3}{Boucler sur une liste de valeurs}{boucler-valeurs}
 	\end{overprint}
+\end{frame}
+\begin{frame}
+	\frametitle{Pour aller plus loin}
+	\begin{itemize}
+		\item<1-> On peut à partir d'un même fichier produire la documentation, le code et la documentation du code, voir : \cite{Pakin2004}
+		\item<2-> Un peu de biblio (hors documentation des packages)
+			\begin{itemize}
+				\item \cite{latex_companion}
+				\item \cite{frama}
+			\end{itemize}
+		\item<3-> Et puis publier sur le CTAN : \url{http://www.ctan.org/upload}
+	\end{itemize}
 \end{frame}
 \end{document}

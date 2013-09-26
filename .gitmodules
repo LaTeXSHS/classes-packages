@@ -1,0 +1,3 @@
+[submodule "biblatex-philologue"]
+	path = biblatex-philologue
+	url = git@github.com:maieul/biblatex-philologue.git
