@@ -2,8 +2,11 @@
 \usepackage{fontspec,polyglossia,xunicode,hyperref}
 \setmainfont{Linux Libertine O}
 \setmainlanguage{french}
-\usepackage{minted}
-\newcommand{\code}[3]{\only<#1>{\begin{block}{#2}\inputminted{latex}{code/#3.tex}\end{block}}}
+
+\newcounter{code}
+\renewcommand{\thecode}{\arabic{code}.~}
+\newcommand{\code}[3]{\only<#1>{\stepcounter{code}\begin{block}{\thecode#2}\inputminted{latex}{code/#3.tex}
+
 \author{Maïeul Rouquette}
 \date{Rencontres \LaTeX\ et SHS}
 \title{Créer ses propres classes et packages}
