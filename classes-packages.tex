@@ -2,10 +2,10 @@
 \usepackage{fontspec,polyglossia,xunicode,hyperref}
 \setmainfont{Linux Libertine O}
 \setmainlanguage{french}
-
+\usepackage{minted}
 \newcounter{code}
 \renewcommand{\thecode}{\arabic{code}.~}
-\newcommand{\code}[3]{\only<#1>{\stepcounter{code}\begin{block}{\thecode#2}\inputminted{latex}{code/#3.tex}
+\newcommand{\code}[3]{\only<#1>{\stepcounter{code}\begin{block}{\thecode#2}\inputminted{latex}{code/#3.tex}\end{block}}}
 
 \author{Maïeul Rouquette}
 \date{Rencontres \LaTeX\ et SHS}
@@ -88,6 +88,7 @@
 
 \begin{frame}
 	\frametitle{Quelques codes utiles}
+	\only<1>{\setcounter{code}{0}}
 	\begin{overprint}
 		\code{1}{Retenir une valeur fournie par l'utilisateur}{retenir-valeur}
 		\code{2}{Tester l'existence d'une commande}{tester-existence}
