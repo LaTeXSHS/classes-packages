@@ -5,7 +5,7 @@
 \usepackage{minted}
 \newcounter{code}
 \renewcommand{\thecode}{\arabic{code}.~}
-\newcommand{\code}[3]{\only<#1>{\footnotesize\stepcounter{code}\begin{block}{\thecode#2}\inputminted{latex}{code/#3.tex}\end{block}}}
+\newcommand{\code}[3]{\only<#1>{\scriptsize\stepcounter{code}\begin{block}{\thecode#2}\inputminted{latex}{code/#3.tex}\end{block}}}
 
 \author{Maïeul Rouquette}
 \date{Rencontres \LaTeX\ et SHS}
